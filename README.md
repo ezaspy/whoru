@@ -1,6 +1,6 @@
 # whoru
- Python script to query multiple IP addresses for whois records
- Ensure each IOC (IP address or domain) is on it's own line (seperated by '\n')
+Python script to query multiple IP addresses for whois records
+Ensure each IOC (IP address or domain) is on it's own line (seperated by '\n')
 
 ## Usage
 
