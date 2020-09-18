@@ -1,11 +1,13 @@
-#!/usr/bin/env python -tt
+#!/usr/bin/env python3 -tt
 
-import argparse, os, re, sys, subprocess, time
+import argparse, os, re, sys, json, time, whois
 
 parser = argparse.ArgumentParser()
 parser.add_argument("file", nargs="+", help="File where IP addresses are stored.")
+parser.add_argument("-v", "--verbose", help="Show progress", action='store_const', const=True, default=False)
 args = parser.parse_args()
-f = args.file
+
+f, verbose = args.file, args.verbose
 f, wholist = f[0], []
 
 def main():
@@ -15,7 +17,7 @@ def main():
         try:
             with open(f) as ff:
                 for line in ff:
-                    w = line.strip("\n")+".csv"
+                    w, jsonlist = line.strip("\n")+".json", []
                     if os.path.isfile(w):
                         lasttime = re.findall(r"st_mtime\=([^\,]+)\,", str(os.stat(w)))[0]
                         lasttime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(lasttime)))
@@ -29,19 +31,18 @@ def main():
                         wholist.append(w)
                     if len(wholist) > 0:
                         for w in wholist:
-                            print(" >> Beginnning whois for %s" % (line.strip("\n")))
-                            dowho = subprocess.Popen(["whois", line.strip("\n")], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                            whoout, _ = dowho.communicate()
-                            whoout = str(whoout)[4:-5].split("\\n")
-                            for each in whoout:
-                                title = re.findall(r"^([^\:]+)\:([^\:]+$)", each)
-                                if len(title)!=0:
-                                    if title[0][0]=="inetsum" or title[0][0]=="status" or title[0][0]=="changed" or title[0][0]=="NetRange" or title[0][0]=="CIDR" or title[0][0]=="NetType" or title[0][0]=="Organization" or title[0][0]=="RegDate" or title[0][0]=="Updated" or title[0][0]=="OrgName" or title[0][0]=="Address" or title[0][0]=="City" or title[0][0]=="StateProv" or title[0][0]=="Country":
-                                        result = str(title[0][0])+","+str(title[0][1]).strip().replace(",",";")+"\n"
-                                        with open(w, "a") as fw:
-                                            fw.write(result)
-                            time.sleep(1)
-                            print(" >> whois lookup completed for %s\n" % (line))
+                            if verbose:
+                                print(" >> Beginnning whois for %s" % (line.strip("\n")))
+                            else:
+                                pass
+                            jsonlist.append(whois.query(line.strip("\n")).__dict__)
+                            with open(w, "a") as whoout:
+                                whoout.write(re.sub(r"(\:\s\{\"[^\"]+\")", r"\1: \"\"", str(str(re.sub(r"(\S), \"(\S)", r"\1\", \"\2", re.sub(r"(\S)\": ([^\s\{])", r"\1\": \"\2", str(jsonlist).replace("'","\"")[1:-1]+"\n"))).replace("\\\"","\"").replace("\"\"\"\"","\"\"").replace("\\r",""))).replace("\\\"\\\"","\"\""))
+                            if verbose:
+                                print(" >> whois completed for %s\n" % (line.strip("\n")))
+                                time.sleep(0.5)
+                            else:
+                                pass
                     else:
                         print(" >> No files were selected for processing.\n")
         except IOError:
