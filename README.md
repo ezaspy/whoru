@@ -1,4 +1,3 @@
-<br><br>
 <!-- PROJECT LOGO -->
 <p align="center">
   <h1 align="center">whoru</h1>
@@ -11,18 +10,6 @@
     <a href="https://github.com/markdown-templates/markdown-snippets/issues">
     <img src="https://img.shields.io/github/issues/markdown-templates/markdown-snippets.svg" alt="Issues">
     </a>
-    <a href="https://github.com/markdown-templates/markdown-snippets/fork">
-    <img src="https://img.shields.io/github/forks/markdown-templates/markdown-snippets.svg" alt="Forks">
-    </a>
-    <a href="https://github.com/markdown-templates/markdown-snippets/stargazers">
-    <img src="https://img.shields.io/github/stars/markdown-templates/markdown-snippets.svg" alt="Stars">
-    </a>
-    <br><br>
-    <a href="https://github.com/ezaspy/whoru">View Demo</a>
-    ·
-    <a href="https://github.com/ezaspy/whoru/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ezaspy/whoru/issues">Request Feature</a>
     <br><br>
   </p>
 </p>
@@ -105,6 +92,10 @@ Project Link: [https://github.com/ezaspy/whoru](https://github.com/ezaspy/whoru)
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [python-whois](https://pypi.org/project/python-whois/)
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+* [Img Shields](https://shields.io)
+* [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Pages](https://pages.github.com)
 
 
 
