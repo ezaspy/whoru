@@ -1,7 +1,7 @@
 <br><br>
 <!-- PROJECT LOGO -->
 <p align="center">
-  <h3 align="center">whoru</h3>
+  <h1 align="center">whoru</h1>
   <p align="center">
     Query multiple IP addresses or domains for whois records.
     <br><br>
