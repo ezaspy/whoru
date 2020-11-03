@@ -4,11 +4,20 @@
   <p align="center">
     Query multiple IP addresses or domains for whois records.
     <br><br>
-    <a href="https://mit-license.org">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT">
+    <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
     </a>
-    <a href="https://github.com/markdown-templates/markdown-snippets/issues">
+    <a href="https://www.python.org">
+    <img src="https://img.shields.io/badge/language-python-red" alt="Language">
+    </a>
+    <a href="https://github.com/ezaspy/whoru/issues">
     <img src="https://img.shields.io/github/issues/markdown-templates/markdown-snippets.svg" alt="Issues">
+    </a>
+    <a href="https://github.com/ezaspy/whoru/fork">
+    <img src="https://img.shields.io/github/forks/markdown-templates/markdown-snippets.svg" alt="Forks">
+    </a>
+    <a href="https://github.com/ezaspy/whoru/stargazers">
+    <img src="https://img.shields.io/github/stars/markdown-templates/markdown-snippets.svg" alt="Stars">
     </a>
     <br><br>
   </p>
@@ -18,7 +27,6 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
 * [Usage](#usage)
@@ -34,12 +42,6 @@
 
 whoru has been created to help fellow digitial forensicators with identifying whois records for multiple IP addresses and/or domains. This has been created form the need to query multiple IOCs during incidents.
 Please ensure each IOC (IP address or domain) is seperated by the new line (\n) character.
-<br>
-
-### Built With
-
-* [Python 3.7+](https://www.python.org)
-* [Visual Studio Code](https://code.visualstudio.com)
 <br><br>
 
 
@@ -111,4 +113,3 @@ Project Link: [https://github.com/ezaspy/whoru](https://github.com/ezaspy/whoru)
 [issues-url]: https://github.com/ezaspy/whoru/issues
 [license-shield]: https://img.shields.io/github/license/ezaspy/whoru.svg?style=flat-square
 [license-url]: https://github.com/ezaspy/whoru/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
