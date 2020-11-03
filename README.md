@@ -27,8 +27,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
+* [Prerequisites](#prerequisites)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [License](#license)
